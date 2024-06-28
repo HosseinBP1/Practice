@@ -4,7 +4,7 @@ public class GettingTheInput {
 	public static void main(String[] args) { 
 		
 		System.out.println("Please enter the numer:");
-		// This will be shown to the user in order to get the input.
+		// This will be printerd to the user in order to get the input.
 		
 		Scanner TheNumberTaker = new Scanner(System.in);
 		/* The scanner function that is used to get the input by, is called
