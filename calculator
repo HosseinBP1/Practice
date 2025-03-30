@@ -1,0 +1,66 @@
+import java.util.*;
+
+public class EX {
+	public static void main(String[] args) {
+
+    // scanner class to get input from the user.
+		Scanner In = new Scanner(System.in);
+
+    // getting the first number from the user and storing it in the double "first".
+		System.out.println("Please enter the first number: ");
+		double first = In.nextInt();
+
+    // getting the operation from the user and storing it in char "operationSign".
+		System.out.println("Please select one of the mathematical operations (*/+-): ");
+		char operationSign = In.next().charAt(0);
+
+    // if the user inserts any character except arithmetic operations
+		if (!SignCheck(operationSign))
+			do {
+			System.out.println("Please only enter one of these characters: * /+- : ");
+			operationSign = In.next().charAt(0);
+			} while (!SignCheck(operationSign));
+
+    
+		System.out.println("Please enter the second number: ");
+		
+		double second = In.nextInt();
+		
+		System.out.println(Operation(first, second, operationSign));
+		
+		In.close();
+	}
+	
+	public static boolean SignCheck (char OperationSign) {
+		switch (OperationSign) {
+		case '*':
+			return true;
+		case '/':
+			return true;
+		case '+':
+			return true;
+		case '-':
+			return true;
+		default:
+			return false;
+		}
+	}
+	
+	public static double Operation (double A, double B, char C) {
+		switch (C) {
+		case '*':
+			double multiplication = A*B;
+			return multiplication;
+		case '/':
+			double division = A/B;
+			return division;
+		case '+':
+			double addition = A+B;
+			return addition;
+		case '-':
+			double subtraction = A-B;
+			return subtraction;
+		}
+		return C;
+	}
+}
